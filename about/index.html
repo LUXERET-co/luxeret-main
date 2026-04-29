@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>룩세렛</title>
+  <title>룩세렛 | 회사소개</title>
   <meta property="og:type" content="website">
-  <meta property="og:title" content="룩세렛">
-  <meta property="og:description" content="룩세렛의 공식 웹사이트입니다. 지금, 룩세렛의 다양한 서비스를 만나보세요.">
+  <meta property="og:title" content="룩세렛 | 회사소개">
+  <meta property="og:description" content="룩세렛 회사소개 페이지입니다.">
   <meta property="og:image" content="https://luxeret.com/assets/image/main-page_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://luxeret.com">
-  <meta name="description" content="룩세렛 메인페이지 입니다.">
+  <meta property="og:url" content="https://luxeret.com/about">
+  <meta name="description" content="룩세렛 회사소개 페이지입니다.">
   <meta name="naver-site-verification" content="483992bf4f969c4ad1b7b46d46bccc6257d5c97b" />
   <meta name="cf-2fa-verify" content="j56lqpajy6zsqlzw">
   <link rel="icon" type="image/png" href="/assets/image/favicon-96x96.png" sizes="96x96" />
@@ -22,19 +20,15 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <script src="https://cdn.tailwindcss.com"></script>
-
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Pretendard', 'sans-serif'],
-          },
+          fontFamily: { sans: ['Pretendard', 'sans-serif'] },
         },
       },
     };
   </script>
-
   <style>
     @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-Thin.woff') format('woff'); font-weight: 100; font-display: swap; }
     @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-ExtraLight.woff') format('woff'); font-weight: 200; font-display: swap; }
@@ -46,6 +40,19 @@
     @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-ExtraBold.woff') format('woff'); font-weight: 800; font-display: swap; }
     @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-Black.woff') format('woff'); font-weight: 900; font-display: swap; }
     body { font-family: 'Pretendard', sans-serif; }
+    .timeline-dot {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .timeline-dot.active {
+      background: white;
+      border-color: white;
+    }
   </style>
 </head>
 
@@ -57,44 +64,35 @@
                 bg-white/10 backdrop-blur-xl border border-white/20
                 shadow-[0_8px_32px_rgba(0,0,0,0.3)]
                 relative overflow-hidden transition-all duration-300">
-
       <div class="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent pointer-events-none"></div>
-
       <a href="https://luxeret.com" class="flex items-center gap-1 z-10">
-  <img src="/assets/image/luxeret-logo.png" class="w-12 h-12 object-contain" alt="룩세렛 로고">
-  <span class="text-lg font-semibold tracking-wide">LUXERET</span>
-</a>
-
+        <img src="/assets/image/luxeret-logo.png" class="w-12 h-12 object-contain" alt="룩세렛 로고">
+        <span class="text-lg font-semibold tracking-wide">LUXERET</span>
+      </a>
       <nav class="hidden md:flex space-x-8 z-10">
         <a href="https://luxeret.com/about"   class="text-lg font-medium text-white/80 hover:text-blue-300 transition">회사소개</a>
         <a href="https://luxeret.com/support" class="text-lg font-medium text-white/80 hover:text-blue-300 transition">고객센터</a>
         <a href="https://luxeret.com/notice"  class="text-lg font-medium text-white/80 hover:text-blue-300 transition">공지사항</a>
         <a href="https://luxeret.com/service" class="text-lg font-medium text-white/80 hover:text-blue-300 transition">서비스</a>
       </nav>
-
       <div class="hidden md:block z-10">
         <button class="bg-blue-400/80 hover:bg-blue-500 text-white text-sm font-semibold px-5 py-2 rounded-full transition">
-          <a href="https://luxeret.com/mypage" class="text-lg font-medium text-white/80 hover:text-blue-300 transition">MY</a>
+          <a href="https://luxeret.com/mypage" class="text-white">MY</a>
         </button>
       </div>
-
       <button id="menuBtn" class="md:hidden flex flex-col space-y-1 z-10" aria-label="메뉴 열기">
         <span class="w-6 h-0.5 bg-white"></span>
         <span class="w-6 h-0.5 bg-white"></span>
         <span class="w-6 h-0.5 bg-white"></span>
       </button>
     </div>
-
-    <div id="mobileMenu" class="hidden mt-3 rounded-2xl
-                               bg-white/10 backdrop-blur-xl
-                               border border-white/20
-                               p-6 space-y-4 md:hidden">
+    <div id="mobileMenu" class="hidden mt-3 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-6 space-y-4 md:hidden">
       <a href="https://luxeret.com/about"   class="block text-sm font-medium">회사소개</a>
       <a href="https://luxeret.com/support" class="block text-sm font-medium">고객센터</a>
       <a href="https://luxeret.com/notice"  class="block text-sm font-medium">공지사항</a>
       <a href="https://luxeret.com/service" class="block text-sm font-medium">서비스</a>
       <button class="w-full mt-2 bg-blue-400 py-2 rounded-full text-sm font-semibold">
-        <a href="https://luxeret.com/mypage" class="text-lg font-medium text-white/80 hover:text-blue-300 transition">MY</a>
+        <a href="https://luxeret.com/mypage" class="text-white">MY</a>
       </button>
     </div>
   </header>
@@ -102,7 +100,7 @@
   <!-- 상단 -->
   <section class="relative h-screen w-full overflow-hidden">
     <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-      <source src="/assets/video/main.mp4" type="video/mp4">
+      <source src="/assets/video/sub.mp4" type="video/mp4">
     </video>
     <div class="absolute inset-0 bg-black/40"></div>
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
@@ -115,75 +113,191 @@
     </div>
   </section>
 
-  <!-- 서비스 -->
-  <section class="bg-black py-24 px-6">
-    <div class="max-w-5xl mx-auto">
-      <div class="mb-16 text-center">
-        <h2 class="text-3xl md:text-5xl font-bold tracking-tight">룩세렛 서비스</h2>
+  <!-- 회사 소개 -->
+  <section class="px-6 pt-24 pb-20">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">회사 소개</h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white/5 border border-white/10 rounded-2xl px-10 py-10">
+        <p class="text-white/70 text-base font-medium leading-loose text-center">
+          룩세렛은 IT 기술과 창의적인 설계를 바탕으로 혁신적인 디지털 솔루션을 제공합니다.<br>
+          B2B와 B2C 고객을 위한 맞춤형 플랫폼 구축 경험을 바탕으로,<br>
+          최적화된 기능과 디자인을 제공합니다.<br><br>
+          사용자 경험과 인터페이스 설계에 집중하여, 직관적이고 편리한 플랫폼을 구현합니다.<br>
+          보안과 안정성을 최우선으로, 모든 서비스와 플랫폼에서 신뢰할 수 있는 환경을 보장합니다.<br><br>
+          기능, 디자인, 사용자 경험의 균형으로 최상의 디지털 환경을 만들어갑니다.<br>
+          룩세렛은 항상 고객 중심의 최상의 솔루션과 안전한 경험을 제공합니다.
+        </p>
+      </div>
+    </div>
+  </section>
 
-        <div class="flex flex-col justify-between bg-white/5 border border-white/10 rounded-2xl p-8">
-          <div>
-            <p class="text-white text-lg font-bold mb-3">리턴 최적화</p>
-            <p class="text-white/60 text-sm font-medium leading-relaxed">
-              윈도우 최적화 솔루션으로,<br>
-              PC 성능 향상과 안정적인<br>
-              시스템 관리를 제공합니다.
-            </p>
+  <!-- 룩세렛의 가치 -->
+  <section class="px-6 pt-8 pb-24">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">룩세렛의 가치</h2>
+        <p class="text-white/40 text-sm font-medium">룩세렛이 지키는 5가지 핵심 가치</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col items-center text-center gap-4">
+          <div class="w-14 h-14 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"/>
+            </svg>
           </div>
-          <div class="mt-8 flex items-end justify-between">
-            <a href="https://returns.luxeret.com" target="_blank" rel="noopener noreferrer"
-               class="flex items-center gap-1.5 text-sm font-semibold text-white/50 hover:text-white/80 transition-colors duration-200">
-              바로가기
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-              </svg>
-            </a>
-            <img src="/assets/image/return-logo.png" class="w-24 h-24 object-contain" alt="리턴 로고">
+          <div>
+            <p class="text-white font-bold text-sm mb-2">데이터 주권</p>
+            <p class="text-white/50 text-sm font-medium leading-relaxed">
+              모든 데이터의 시작과 끝은 고객에게 있습니다<br>
+              동의 없는 활용은 원칙적으로 배제하며,<br>
+              개인의 선택이 항상 우선합니다
+            </p>
           </div>
         </div>
 
-        <div class="flex flex-col justify-between bg-white/5 border border-white/10 rounded-2xl p-8">
-          <div>
-            <p class="text-white text-lg font-bold mb-3">웹핀</p>
-            <p class="text-white/60 text-sm font-medium leading-relaxed">
-              고객 맞춤형 웹사이트 제작 서비스로,<br>
-              효율적이고 직관적인 디자인과<br>
-              안정적인 개발 환경을 제공합니다.
-            </p>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col items-center text-center gap-4">
+          <div class="w-14 h-14 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+            </svg>
           </div>
-          <div class="mt-8 flex items-end justify-between">
-            <a href="https://webpin.luxeret.com" target="_blank" rel="noopener noreferrer"
-               class="flex items-center gap-1.5 text-sm font-semibold text-white/50 hover:text-white/80 transition-colors duration-200">
-              바로가기
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-              </svg>
-            </a>
-            <img src="/assets/image/webpin-logo.png" class="w-24 h-24 object-contain" alt="웹핀 로고">
+          <div>
+            <p class="text-white font-bold text-sm mb-2">보안 중심</p>
+            <p class="text-white/50 text-sm font-medium leading-relaxed">
+              보안은 기능이 아니라 전제 조건입니다<br>
+              모든 서비스는 가장 높은 수준의<br>
+              보호 기준 위에서 설계되고 운영됩니다
+            </p>
           </div>
         </div>
 
-        <div class="flex flex-col justify-between bg-white/5 border border-white/10 rounded-2xl p-8">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col items-center text-center gap-4">
+          <div class="w-14 h-14 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/>
+            </svg>
+          </div>
           <div>
-            <p class="text-white text-lg font-bold mb-3">룩세렛 멤버십</p>
-            <p class="text-white/60 text-sm font-medium leading-relaxed">
-              다양하고 풍성한 혜택을<br>
-              한 번에 누릴 수 있도록<br>
-              고객 맞춤형 서비스와<br>
-              다양한 프로그램을 함께 마련합니다.
+            <p class="text-white font-bold text-sm mb-2">안전한 이용 환경</p>
+            <p class="text-white/50 text-sm font-medium leading-relaxed">
+              누구나 걱정 없이 머물 수 있는<br>
+              디지털 공간을 만듭니다<br>
+              아동과 청소년을 포함한 모든 사용자를 위해<br>
+              위험 요소를 지속적으로 관리합니다
             </p>
           </div>
-          <div class="mt-8 flex items-end justify-between">
-            <a href="https://luxeret.com/membership" target="_blank" rel="noopener noreferrer"
-               class="flex items-center gap-1.5 text-sm font-semibold text-white/50 hover:text-white/80 transition-colors duration-200">
-              바로가기
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-              </svg>
-            </a>
-            <img src="/assets/image/membership-logo.png" class="w-24 h-24 object-contain" alt="멤버십 로고">
+        </div>
+
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col items-center text-center gap-4">
+          <div class="w-14 h-14 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-white font-bold text-sm mb-2">모두를 위한 접근성</p>
+            <p class="text-white/50 text-sm font-medium leading-relaxed">
+              기술은 일부가 아닌 모두를<br>
+              위해 존재해야 합니다<br>
+              사용 장벽을 낮추고 다양한 사용자가<br>
+              자연스럽게 이용할 수 있도록 설계합니다
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col items-center text-center gap-4">
+          <div class="w-14 h-14 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-white font-bold text-sm mb-2">열린 신뢰 구조</p>
+            <p class="text-white/50 text-sm font-medium leading-relaxed">
+              우리는 과정을 숨기지 않습니다<br>
+              기준과 운영 방향을 투명하게 공유하고,<br>
+              사용자와의 소통을 통해 신뢰를 만들어갑니다
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 연혁 -->
+  <section class="px-6 pt-4 pb-24">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">연혁</h2>
+        <p class="text-white/40 text-sm font-medium">룩세렛의 도전이 쌓인 시간</p>
+      </div>
+
+      <div class="space-y-12">
+
+        <!-- 2026 -->
+        <div class="flex gap-6">
+          <div class="flex flex-col items-center">
+            <div class="timeline-dot active"></div>
+            <div class="w-px flex-1 bg-white/10 mt-3"></div>
+          </div>
+          <div class="pb-8 flex-1">
+            <h3 class="text-xl font-bold text-white mb-4">2026</h3>
+            <div class="space-y-3">
+              <div class="bg-white/5 border border-white/10 rounded-xl px-5 py-4">
+                <p class="text-white/30 text-xs font-semibold mb-1">현재</p>
+                <p class="text-white/70 text-sm font-medium">끊임 없는 도전중</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2025 -->
+        <div class="flex gap-6">
+          <div class="flex flex-col items-center">
+            <div class="timeline-dot"></div>
+            <div class="w-px flex-1 bg-white/10 mt-3"></div>
+          </div>
+          <div class="pb-8 flex-1">
+            <h3 class="text-xl font-bold text-white mb-4">2025</h3>
+            <div class="space-y-3">
+              <div class="bg-white/5 border border-white/10 rounded-xl px-5 py-4">
+                <p class="text-white/30 text-xs font-semibold mb-1">2025.11</p>
+                <p class="text-white/70 text-sm font-medium">모노에그, 싱글스레드 파트너십 체결</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2024 -->
+        <div class="flex gap-6">
+          <div class="flex flex-col items-center">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-white mb-4">2024</h3>
+            <div class="space-y-3">
+              <div class="bg-white/5 border border-white/10 rounded-xl px-5 py-4">
+                <p class="text-white/30 text-xs font-semibold mb-1">2024.12</p>
+                <p class="text-white/70 text-sm font-medium">리턴 서비스 인수</p>
+              </div>
+              <div class="bg-white/5 border border-white/10 rounded-xl px-5 py-4">
+                <p class="text-white/30 text-xs font-semibold mb-1">2024.12</p>
+                <p class="text-white/70 text-sm font-medium">웹핀 서비스 출시</p>
+              </div>
+              <div class="bg-white/5 border border-white/10 rounded-xl px-5 py-4">
+                <p class="text-white/30 text-xs font-semibold mb-1">2024.01</p>
+                <p class="text-white/70 text-sm font-medium">대한민국 사업자 등록</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -194,8 +308,8 @@
   <!-- 이야기 -->
   <section class="bg-black py-24 px-6">
     <div class="max-w-5xl mx-auto">
-      <div class="mb-16 text-center">
-        <h2 class="text-3xl md:text-5xl font-bold tracking-tight">룩세렛 최근 이야기</h2>
+      <div class="mb-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">룩세렛 최근 이야기</h2>
       </div>
 
       <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -238,14 +352,12 @@
   <footer class="bg-[#0a0a0a] border-t border-white/10">
     <div class="max-w-5xl mx-auto px-6 pt-14 pb-8">
       <div class="flex flex-col md:flex-row justify-between gap-12 mb-12">
-
         <div class="flex flex-col gap-4 min-w-[180px]">
           <div class="flex items-center gap-1.5">
             <img src="/assets/image/luxeret-logo.png" class="w-9 h-9 object-contain" alt="룩세렛 로고">
             <span class="text-white font-bold tracking-widest text-base">LUXERET</span>
           </div>
         </div>
-
         <div class="flex flex-wrap gap-10 md:gap-14">
           <div class="flex flex-col gap-3">
             <p class="text-white text-sm font-bold tracking-widest uppercase mb-1">서비스</p>
@@ -253,7 +365,6 @@
             <a href="https://luxeret.com/support" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">고객센터</a>
             <a href="https://docs.luxeret.com/luxeret/brand-policy" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">브랜드 리소스센터</a>
           </div>
-
           <div class="flex flex-col gap-3">
             <p class="text-white text-sm font-bold tracking-widest uppercase mb-1">회사</p>
             <a href="https://luxeret.com/about" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">회사소개</a>
@@ -261,7 +372,6 @@
             <a href="https://webpin.luxeret.com" target="_blank" rel="noopener noreferrer" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">웹핀</a>
             <a href="https://shop.luxeret.com" target="_blank" rel="noopener noreferrer" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">룩세렛 스토어</a>
           </div>
-
           <div class="flex flex-col gap-3">
             <p class="text-white text-sm font-bold tracking-widest uppercase mb-1">약관 및 법적고지</p>
             <a href="https://docs.luxeret.com/luxeret/policy/privacy" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">개인정보 처리방침</a>
@@ -272,7 +382,6 @@
           </div>
         </div>
       </div>
-
       <div class="border-t border-white/10 pt-8 space-y-4">
         <div class="flex flex-wrap gap-x-2 gap-y-1 text-white/50 text-sm font-medium">
           <span>대표: 김태준</span>
@@ -291,9 +400,10 @@
     </div>
   </footer>
 
+
   <script>
     const RSS_URL = 'https://blog.luxeret.com/rss';
-    const PROXY   = 'https://api.codetabs.com/v1/proxy/?quest=';
+    const PROXY   = 'https://corsproxy.io/?';
 
     const GRADIENTS = [
       'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)',
@@ -311,9 +421,7 @@
       try {
         const u = new URL(url);
         return (u.protocol === 'https:' || u.protocol === 'http:') ? url : '#';
-      } catch {
-        return '#';
-      }
+      } catch { return '#'; }
     }
 
     async function loadBlogPosts() {
@@ -321,13 +429,9 @@
         const res = await fetch(PROXY + encodeURIComponent(RSS_URL));
         if (!res.ok) throw new Error('네트워크 오류');
         const text = await res.text();
-
         const parser = new DOMParser();
         const xml = parser.parseFromString(text, 'text/xml');
-
-        const parseError = xml.querySelector('parsererror');
-        if (parseError) throw new Error('RSS 파싱 오류');
-
+        if (xml.querySelector('parsererror')) throw new Error('RSS 파싱 오류');
         const items = Array.from(xml.querySelectorAll('item')).slice(0, 3);
         if (!items.length) throw new Error('게시물 없음');
 
@@ -351,9 +455,7 @@
 
         posts.forEach(({ title, link, date, gradient }) => {
           const a = document.createElement('a');
-          a.href   = link;
-          a.target = '_blank';
-          a.rel    = 'noopener noreferrer';
+          a.href = link; a.target = '_blank'; a.rel = 'noopener noreferrer';
           a.className = 'flex flex-col bg-white/5 border border-white/10 rounded-2xl overflow-hidden';
 
           const thumb = document.createElement('div');
@@ -402,19 +504,10 @@
     const menuBtn    = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     const header     = document.getElementById('header');
-
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.firstElementChild.classList.add('bg-white/20');
-      } else {
-        header.firstElementChild.classList.remove('bg-white/20');
-      }
+      header.firstElementChild.classList.toggle('bg-white/20', window.scrollY > 50);
     });
-
     document.addEventListener('DOMContentLoaded', () => {
       const video = document.querySelector('video');
       if (video) video.play().catch(() => {});
