@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>룩세렛 | 고객센터</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="룩세렛 | 고객센터">
+  <meta property="og:description" content="룩세렛 고객센터입니다. 무엇이든 도와드리겠습니다.">
+  <meta property="og:image" content="https://luxeret.com/assets/image/support-page_preview.png">
+  <meta property="og:url" content="https://luxeret.com/support">
+  <meta name="description" content="룩세렛 고객센터 페이지입니다.">
+  <meta name="naver-site-verification" content="483992bf4f969c4ad1b7b46d46bccc6257d5c97b" />
+  <meta name="cf-2fa-verify" content="j56lqpajy6zsqlzw">
+  <link rel="icon" type="image/png" href="/assets/image/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/image/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/image/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/image/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/image/site.webmanifest" />
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Pretendard', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <style>
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-Thin.woff') format('woff'); font-weight: 100; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-ExtraLight.woff') format('woff'); font-weight: 200; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-Light.woff') format('woff'); font-weight: 300; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-Regular.woff') format('woff'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-Medium.woff') format('woff'); font-weight: 500; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-SemiBold.woff') format('woff'); font-weight: 600; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-Bold.woff') format('woff'); font-weight: 700; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-ExtraBold.woff') format('woff'); font-weight: 800; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-Black.woff') format('woff'); font-weight: 900; font-display: swap; }
+    body { font-family: 'Pretendard', sans-serif; }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer.open {
+      max-height: 400px;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white antialiased">
+
+  <!-- HEADER -->
+  <header id="header" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
+    <div class="flex items-center justify-between px-6 py-3 rounded-full
+                bg-white/10 backdrop-blur-xl border border-white/20
+                shadow-[0_8px_32px_rgba(0,0,0,0.3)]
+                relative overflow-hidden transition-all duration-300">
+      <div class="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent pointer-events-none"></div>
+      <div class="flex items-center gap-1 z-10">
+        <img src="/assets/image/luxeret-logo.png" class="w-12 h-12 object-contain" alt="룩세렛 로고">
+        <span class="text-lg font-semibold tracking-wide">LUXERET</span>
+      </div>
+      <nav class="hidden md:flex space-x-8 z-10">
+        <a href="https://luxeret.com/about"   class="text-lg font-medium text-white/80 hover:text-blue-300 transition">회사소개</a>
+        <a href="https://luxeret.com/support" class="text-lg font-medium text-white/80 hover:text-blue-300 transition">고객센터</a>
+        <a href="https://luxeret.com/notice"  class="text-lg font-medium text-white/80 hover:text-blue-300 transition">공지사항</a>
+        <a href="https://luxeret.com/service" class="text-lg font-medium text-white/80 hover:text-blue-300 transition">서비스</a>
+      </nav>
+      <div class="hidden md:block z-10">
+        <button class="bg-blue-400/80 hover:bg-blue-500 text-white text-sm font-semibold px-5 py-2 rounded-full transition">
+          <a href="https://luxeret.com/mypage" class="text-white">MY</a>
+        </button>
+      </div>
+      <button id="menuBtn" class="md:hidden flex flex-col space-y-1 z-10" aria-label="메뉴 열기">
+        <span class="w-6 h-0.5 bg-white"></span>
+        <span class="w-6 h-0.5 bg-white"></span>
+        <span class="w-6 h-0.5 bg-white"></span>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden mt-3 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-6 space-y-4 md:hidden">
+      <a href="https://luxeret.com/about"   class="block text-sm font-medium">회사소개</a>
+      <a href="https://luxeret.com/support" class="block text-sm font-medium">고객센터</a>
+      <a href="https://luxeret.com/notice"  class="block text-sm font-medium">공지사항</a>
+      <a href="https://luxeret.com/service" class="block text-sm font-medium">서비스</a>
+      <button class="w-full mt-2 bg-blue-400 py-2 rounded-full text-sm font-semibold"><a href="https://luxeret.com/mypage" class="text-lg font-medium text-white/80 hover:text-blue-300 transition">MY</a></button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative pt-40 pb-20 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+        무엇을 도와드릴까요?
+      </h1>
+      <p class="text-white/50 text-sm md:text-base font-medium mb-10">
+        찾으시는 내용을 검색하거나 아래 FAQ를 확인해보세요.
+      </p>
+      <div class="relative max-w-xl mx-auto">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="궁금한 내용을 검색해보세요"
+          autocomplete="off"
+          class="w-full bg-white/5 border border-white/15 rounded-full px-6 py-4 pr-14
+                 text-white text-sm font-medium placeholder-white/30
+                 focus:outline-none focus:border-white/40 transition-colors duration-200"
+        />
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="w-5 h-5 absolute right-5 top-1/2 -translate-y-1/2 text-white/30 pointer-events-none"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+        </svg>
+        <div id="suggestions"
+             class="hidden absolute top-full left-0 right-0 mt-2 bg-[#1a1a1a] border border-white/10 rounded-2xl overflow-hidden z-50">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 문의 채널 -->
+  <section class="px-6 pb-16">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- 이메일 -->
+      <a href="mailto:cs@luxeret.com"
+         class="flex items-center gap-6 bg-white/5 border border-white/10 rounded-2xl p-8">
+        <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-white font-bold text-base mb-1">이메일 문의</p>
+          <p class="text-white/50 text-sm font-medium">cs@luxeret.com</p>
+          <p class="text-white/30 text-xs font-medium mt-1">영업일 기준 3일 이내 회신</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white/20 ml-auto"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <!-- 카카오 채팅 -->
+      <div id="kakaoCard"
+           class="flex items-center gap-6 bg-white/5 border border-white/10 rounded-2xl p-8 cursor-not-allowed"
+           onclick="handleKakaoClick()">
+        <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 3C6.477 3 2 6.582 2 11c0 2.83 1.696 5.323 4.29 6.88-.19.67-.688 2.423-.788 2.8-.124.462.17.456.357.332.146-.097 2.32-1.573 3.258-2.21.606.086 1.23.132 1.883.132 5.523 0 10-3.582 10-8S17.523 3 12 3z"/>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <p class="text-white font-bold text-base mb-1">채팅상담</p>
+          <p class="text-white/50 text-sm font-medium">카카오채널로 문의</p>
+          <p id="kakaoStatus" class="text-xs font-medium mt-1"></p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white/20 ml-auto"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="px-6 pb-32">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-10 text-center">자주 묻는 질문</h2>
+      <div id="faqList" class="space-y-3"></div>
+      <p id="noResult" class="hidden text-center text-white/30 text-sm font-medium py-12">
+        검색 결과가 없습니다. 직접 문의해주시면 빠르게 도와드리겠습니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0a0a0a] border-t border-white/10">
+    <div class="max-w-5xl mx-auto px-6 pt-14 pb-8">
+      <div class="flex flex-col md:flex-row justify-between gap-12 mb-12">
+        <div class="flex flex-col gap-4 min-w-[180px]">
+          <div class="flex items-center gap-1.5">
+            <img src="/assets/image/luxeret-logo.png" class="w-9 h-9 object-contain" alt="룩세렛 로고">
+            <span class="text-white font-bold tracking-widest text-base">LUXERET</span>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-10 md:gap-14">
+          <div class="flex flex-col gap-3">
+            <p class="text-white text-sm font-bold tracking-widest uppercase mb-1">서비스</p>
+            <a href="https://luxeret.com/notice" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">공지사항</a>
+            <a href="https://luxeret.com/support" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">고객센터</a>
+            <a href="https://docs.luxeret.com/luxeret/brand-policy" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">브랜드 리소스센터</a>
+          </div>
+          <div class="flex flex-col gap-3">
+            <p class="text-white text-sm font-bold tracking-widest uppercase mb-1">회사</p>
+            <a href="https://luxeret.com/about" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">회사소개</a>
+            <a href="https://returns.luxeret.com" target="_blank" rel="noopener noreferrer" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">리턴</a>
+            <a href="https://webpin.luxeret.com" target="_blank" rel="noopener noreferrer" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">웹핀</a>
+            <a href="https://shop.luxeret.com" target="_blank" rel="noopener noreferrer" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">룩세렛 스토어</a>
+          </div>
+          <div class="flex flex-col gap-3">
+            <p class="text-white text-sm font-bold tracking-widest uppercase mb-1">약관 및 법적고지</p>
+            <a href="https://docs.luxeret.com/luxeret/policy/privacy" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">개인정보 처리방침</a>
+            <a href="https://docs.luxeret.com/luxeret/policy/terms" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">서비스 이용약관</a>
+            <a href="https://docs.luxeret.com/luxeret/privacy-overseas" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">개인정보 국외이전 동의</a>
+            <a href="https://docs.luxeret.com/luxeret/policy/email" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">이메일 무단수집 거부</a>
+            <a href="https://docs.luxeret.com/luxeret/policy/agreement" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">청소년 보호정책</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 space-y-4">
+        <div class="flex flex-wrap gap-x-2 gap-y-1 text-white/50 text-sm font-medium">
+          <span>대표: 김태준</span>
+          <span class="text-white/20">|</span>
+          <span>사업자 등록번호: 802-68-00634</span>
+          <span class="text-white/20">|</span>
+          <span>통신판매업 신고번호: 2026-화성동탄-0247</span>
+          <span class="text-white/20">|</span>
+          <span>경기도 화성시 10용사로 344 102-B95호</span>
+        </div>
+        <p class="text-white/40 text-sm font-medium">
+          Copyright © 2025-2026 LUXERET. All Rights Reserved.<br>
+          본 사이트의 컨텐츠는 저작권법의 보호를 받는 바 무단 전재, 복사, 배포 등을 금합니다.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 비활성 토스트 -->
+  <div id="closedToast"
+       class="hidden fixed bottom-8 left-1/2 -translate-x-1/2 z-50
+              bg-[#1a1a1a] border border-white/10 rounded-2xl px-6 py-4
+              text-white/70 text-sm font-medium shadow-lg whitespace-nowrap">
+    새로운 상담은 월요일~토요일 09:00~17:00 사이에 가능해요!
+  </div>
+
+  <script>
+    const menuBtn    = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const header     = document.getElementById('header');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    window.addEventListener('scroll', () => {
+      header.firstElementChild.classList.toggle('bg-white/20', window.scrollY > 50);
+    });
+
+    function isKakaoOpen() {
+      const now  = new Date();
+      const day  = now.getDay();
+      const time = now.getHours() * 60 + now.getMinutes();
+      return day >= 1 && day <= 6 && time >= 9 * 60 && time < 17 * 60;
+    }
+
+    function initKakaoCard() {
+      const card   = document.getElementById('kakaoCard');
+      const status = document.getElementById('kakaoStatus');
+      if (isKakaoOpen()) {
+        card.classList.remove('opacity-60', 'cursor-not-allowed');
+        card.classList.add('cursor-pointer');
+        status.textContent = '지금 바로 상담원과 상담 할 수 있어요! ';
+        status.className   = 'text-xs font-medium mt-1 text-green-400';
+      } else {
+        card.classList.add('opacity-60', 'cursor-not-allowed');
+        card.classList.remove('cursor-pointer');
+        status.textContent = '현재는 운영시간이 아닙니다.';
+        status.className   = 'text-xs font-medium mt-1 text-white/30';
+      }
+    }
+
+    function handleKakaoClick() {
+      if (isKakaoOpen()) {
+        window.open('https://pf.kakao.com/_qxenQG', '_blank', 'noopener,noreferrer');
+      } else {
+        const toast = document.getElementById('closedToast');
+        toast.classList.remove('hidden');
+        setTimeout(() => toast.classList.add('hidden'), 3500);
+      }
+    }
+
+    initKakaoCard();
+
+    const FAQ_DATA = [
+      {
+        q: '회원가입은 어떻게 하나요?',
+        a: '우측 상단의 \'마이페이지\' 버튼을 클릭한 뒤, 카카오 로그인을 선택하시면 간편하게 가입하실 수 있습니다.',
+        visible: true,
+      },
+      {
+        q: '리턴 최적화 서비스는 무료인가요?',
+        a: '리턴 최적화는 유료 플랜을 기반으로 제공되며, 월간 구독권 또는 무제한 이용권을 구독하여 이용하실 수 있습니다.',
+        visible: true,
+      },
+      {
+        q: '웹핀으로 제작한 웹사이트의 소유권은 누구에게 있나요?',
+        a: '웹핀을 통해 제작된 웹사이트의 모든 소유권은 고객에게 있습니다. 제작 완료 후 소스코드 및 디자인 파일 일체를 고객에게 전달해드립니다.',
+        visible: true,
+      },
+      {
+        q: '룩세렛 멤버십 혜택은 어떻게 되나요?',
+        a: '룩세렛 멤버십 가입 시 신규 서비스 미리 보기, 일부 유료 서비스 할인 등 다양한 혜택을 받으실 수 있습니다. 자세한 내용은 멤버십 페이지에서 확인해주세요.',
+        visible: true,
+      },
+      {
+        q: '환불 정책이 어떻게 되나요?',
+        a: '결제일로부터 7일 이내, 서비스를 이용하지 않은 경우 전액 환불이 가능합니다. 이용 중인 경우 잔여 기간에 대한 부분 환불이 적용됩니다. 자세한 사항은 청약철회를 참조해주세요.',
+        visible: true,
+      },
+      {
+        q: '개인정보는 어떻게 보호되나요?',
+        a: '룩세렛은 개인정보보호법에 따라 고객의 개인정보를 안전하게 관리합니다. 수집된 정보는 서비스 제공 목적으로만 사용되며 제3자에게 제공되지 않습니다.',
+        visible: true,
+      },
+      {
+        q: '계정을 잠그고 싶어요.',
+        a: '고객센터로 문의해 주시면 확인 후 신속하게 계정 잠금 처리 도와드리겠습니다.',
+        visible: false,
+      },
+      {
+        q: '계정을 탈퇴하고 싶어요.',
+        a: '마이페이지 > 계정 설정 > 회원 탈퇴에서 직접 탈퇴하실 수 있습니다. 탈퇴 후 데이터는 30일간 보관 후 영구 삭제됩니다.',
+        visible: false,
+      },
+      {
+        q: '리턴 최적화가 윈도우 11에서도 작동하나요?',
+        a: '네, 리턴 최적화는 Windows 10 및 Windows 11 모두 지원합니다. 최신 업데이트를 통해 호환성을 지속적으로 개선하고 있습니다.',
+        visible: false,
+      },
+      {
+        q: '웹핀 제작 기간은 얼마나 걸리나요?',
+        a: '프로젝트 규모에 따라 다르지만 일반적으로 랜딩페이지는 5~10일, 중형 사이트는 2~3주, 대형 프로젝트는 별도 협의를 통해 진행됩니다.',
+        visible: false,
+      },
+      {
+        q: '결제 수단은 어떤 것들이 있나요?',
+        a: '신용카드, 체크카드, 계좌이체, 카카오페이, 네이버페이를 지원합니다. 법인 고객의 경우 세금계산서 발행도 가능합니다.',
+        visible: false,
+      },
+      {
+        q: '영수증이나 세금계산서를 받을 수 있나요?',
+        a: '마이페이지 > 결제 내역에서 영수증을 출력하실 수 있습니다. 세금계산서는 고객센터로 사업자 정보와 함께 요청해주시면 발행해드립니다.',
+        visible: false,
+      },
+      {
+        q: '서비스 이용 중 오류가 발생했어요.',
+        a: '이메일(cs@luxeret.com) 또는 카카오채널로 오류 내용과 스크린샷을 보내주시면 빠르게 확인 후 안내드리겠습니다.',
+        visible: false,
+      },
+      {
+        q: '멤버십은 언제든 해지할 수 있나요?',
+        a: '네, 멤버십은 언제든 해지 가능합니다. 해지 후에도 결제된 기간까지는 혜택이 유지됩니다.',
+        visible: false,
+      },
+    ];
+
+    const faqList = document.getElementById('faqList');
+    const noResult = document.getElementById('noResult');
+
+    function createFaqItem(item) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'faq-item bg-white/5 border border-white/10 rounded-2xl overflow-hidden';
+      wrapper.dataset.question = item.q.toLowerCase();
+      wrapper.dataset.answer   = item.a.toLowerCase();
+
+      const btn = document.createElement('button');
+      btn.className = 'faq-btn w-full flex items-center justify-between px-6 py-5 text-left';
+
+      const span = document.createElement('span');
+      span.className = 'text-white text-sm font-semibold';
+      span.textContent = item.q;
+
+      const icon = document.createElement('svg');
+      icon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+      icon.setAttribute('viewBox', '0 0 24 24');
+      icon.setAttribute('fill', 'none');
+      icon.setAttribute('stroke', 'currentColor');
+      icon.setAttribute('stroke-width', '2');
+      icon.className = 'faq-icon w-5 h-5 text-white/40 shrink-0 transition-transform duration-300';
+      icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>';
+
+      btn.appendChild(span);
+      btn.appendChild(icon);
+
+      const answer = document.createElement('div');
+      answer.className = 'faq-answer px-6 text-white/60 text-sm font-medium leading-relaxed';
+
+      const p = document.createElement('p');
+      p.className = 'pb-5';
+      p.textContent = item.a;
+      answer.appendChild(p);
+
+      btn.addEventListener('click', () => {
+        const isOpen = answer.classList.contains('open');
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = '');
+        if (!isOpen) {
+          answer.classList.add('open');
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+
+      wrapper.appendChild(btn);
+      wrapper.appendChild(answer);
+      return wrapper;
+    }
+
+    FAQ_DATA.filter(f => f.visible).forEach(item => faqList.appendChild(createFaqItem(item)));
+
+    const searchInput = document.getElementById('searchInput');
+    const suggestions = document.getElementById('suggestions');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.trim().toLowerCase();
+
+      if (query.length > 0) {
+        const matched = FAQ_DATA.filter(f =>
+          f.q.toLowerCase().includes(query) || f.a.toLowerCase().includes(query)
+        ).slice(0, 5);
+
+        if (matched.length > 0) {
+          suggestions.innerHTML = '';
+          matched.forEach((f, idx) => {
+            const btn = document.createElement('button');
+            btn.className = 'w-full flex items-center gap-3 px-5 py-3 text-left text-sm font-medium text-white/70' +
+              (idx < matched.length - 1 ? ' border-b border-white/5' : '');
+
+            const iconSpan = document.createElement('span');
+            iconSpan.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white/30 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/></svg>`;
+
+            const text = document.createElement('span');
+            text.textContent = f.q;
+
+            btn.appendChild(iconSpan);
+            btn.appendChild(text);
+
+            btn.addEventListener('click', () => {
+              searchInput.value = f.q;
+              suggestions.classList.add('hidden');
+              runSearch(f.q.toLowerCase());
+            });
+
+            suggestions.appendChild(btn);
+          });
+          suggestions.classList.remove('hidden');
+        } else {
+          suggestions.classList.add('hidden');
+        }
+      } else {
+        suggestions.classList.add('hidden');
+      }
+
+      runSearch(query);
+    });
+
+    function runSearch(query) {
+      faqList.innerHTML = '';
+      if (query === '') {
+        FAQ_DATA.filter(f => f.visible).forEach(item => faqList.appendChild(createFaqItem(item)));
+        noResult.classList.add('hidden');
+        return;
+      }
+      const matched = FAQ_DATA.filter(f =>
+        f.q.toLowerCase().includes(query) || f.a.toLowerCase().includes(query)
+      );
+      if (matched.length > 0) {
+        matched.forEach(item => faqList.appendChild(createFaqItem(item)));
+        noResult.classList.add('hidden');
+      } else {
+        noResult.classList.remove('hidden');
+      }
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!searchInput.contains(e.target) && !suggestions.contains(e.target)) {
+        suggestions.classList.add('hidden');
+      }
+    });
+  </script>
+
+</body>
+</html>
