@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>룩세렛</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="룩세렛">
+  <meta property="og:description" content="룩세렛의 공식 웹사이트입니다. 지금, 룩세렛의 다양한 서비스를 만나보세요.">
+  <meta property="og:image" content="https://luxeret.com/assets/image/main-page_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://luxeret.com">
+  <meta name="description" content="룩세렛 메인페이지 입니다.">
+  <meta name="naver-site-verification" content="483992bf4f969c4ad1b7b46d46bccc6257d5c97b" />
+  <meta name="cf-2fa-verify" content="j56lqpajy6zsqlzw">
+  <link rel="icon" type="image/png" href="/assets/image/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/image/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/image/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/image/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/image/site.webmanifest" />
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-Thin.woff') format('woff'); font-weight: 100; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-ExtraLight.woff') format('woff'); font-weight: 200; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-Light.woff') format('woff'); font-weight: 300; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-Regular.woff') format('woff'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-Medium.woff') format('woff'); font-weight: 500; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-SemiBold.woff') format('woff'); font-weight: 600; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-Bold.woff') format('woff'); font-weight: 700; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-ExtraBold.woff') format('woff'); font-weight: 800; font-display: swap; }
+    @font-face { font-family: 'Pretendard'; src: url('/assets/fonts/Pretendard-Black.woff') format('woff'); font-weight: 900; font-display: swap; }
+    body { font-family: 'Pretendard', sans-serif; }
+  </style>
+</head>
+
+<body class="bg-black text-white antialiased">
+
+  <!-- HEADER -->
+  <header id="header" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
+    <div class="flex items-center justify-between px-6 py-3 rounded-full
+                bg-white/10 backdrop-blur-xl border border-white/20
+                shadow-[0_8px_32px_rgba(0,0,0,0.3)]
+                relative overflow-hidden transition-all duration-300">
+
+      <div class="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent pointer-events-none"></div>
+
+      <div class="flex items-center gap-1 z-10">
+        <img src="/assets/image/luxeret-logo.png" class="w-12 h-12 object-contain" alt="룩세렛 로고">
+        <span class="text-lg font-semibold tracking-wide">LUXERET</span>
+      </div>
+
+      <nav class="hidden md:flex space-x-8 z-10">
+        <a href="https://luxeret.com/about"   class="text-lg font-medium text-white/80 hover:text-blue-300 transition">회사소개</a>
+        <a href="https://luxeret.com/support" class="text-lg font-medium text-white/80 hover:text-blue-300 transition">고객센터</a>
+        <a href="https://luxeret.com/notice"  class="text-lg font-medium text-white/80 hover:text-blue-300 transition">공지사항</a>
+        <a href="https://luxeret.com/service" class="text-lg font-medium text-white/80 hover:text-blue-300 transition">서비스</a>
+      </nav>
+
+      <div class="hidden md:block z-10">
+        <button class="bg-blue-400/80 hover:bg-blue-500 text-white text-sm font-semibold px-5 py-2 rounded-full transition">
+          마이페이지
+        </button>
+      </div>
+
+      <button id="menuBtn" class="md:hidden flex flex-col space-y-1 z-10" aria-label="메뉴 열기">
+        <span class="w-6 h-0.5 bg-white"></span>
+        <span class="w-6 h-0.5 bg-white"></span>
+        <span class="w-6 h-0.5 bg-white"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden mt-3 rounded-2xl
+                               bg-white/10 backdrop-blur-xl
+                               border border-white/20
+                               p-6 space-y-4 md:hidden">
+      <a href="https://luxeret.com/about"   class="block text-sm font-medium">회사소개</a>
+      <a href="https://luxeret.com/support" class="block text-sm font-medium">고객센터</a>
+      <a href="https://luxeret.com/notice"  class="block text-sm font-medium">공지사항</a>
+      <a href="https://luxeret.com/service" class="block text-sm font-medium">서비스</a>
+      <button class="w-full mt-2 bg-blue-400 py-2 rounded-full text-sm font-semibold">
+        마이페이지
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative h-screen w-full overflow-hidden">
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+      <source src="/assets/video/main.mp4" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <h1 class="text-3xl md:text-6xl font-bold tracking-tight mb-5 leading-tight">
+        가능성을 넘어, 가치를 향해
+      </h1>
+      <p class="text-sm md:text-lg text-gray-300 font-medium tracking-wide">
+        모든 도전은 가치가 됩니다. 룩세렛은 그 여정을 함께합니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="bg-black py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight">룩세렛 서비스</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <div class="flex flex-col justify-between bg-white/5 border border-white/10 rounded-2xl p-8">
+          <div>
+            <p class="text-white text-lg font-bold mb-3">리턴 최적화</p>
+            <p class="text-white/60 text-sm font-medium leading-relaxed">
+              윈도우 최적화 솔루션으로,<br>
+              PC 성능 향상과 안정적인<br>
+              시스템 관리를 제공합니다.
+            </p>
+          </div>
+          <div class="mt-8 flex items-end justify-between">
+            <a href="https://returns.luxeret.com" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-1.5 text-sm font-semibold text-white/50 hover:text-white/80 transition-colors duration-200">
+              바로가기
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+            </a>
+            <img src="/assets/image/return-logo.png" class="w-24 h-24 object-contain" alt="리턴 로고">
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-between bg-white/5 border border-white/10 rounded-2xl p-8">
+          <div>
+            <p class="text-white text-lg font-bold mb-3">웹핀</p>
+            <p class="text-white/60 text-sm font-medium leading-relaxed">
+              고객 맞춤형 웹사이트 제작 서비스로,<br>
+              효율적이고 직관적인 디자인과<br>
+              안정적인 개발 환경을 제공합니다.
+            </p>
+          </div>
+          <div class="mt-8 flex items-end justify-between">
+            <a href="https://webpin.luxeret.com" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-1.5 text-sm font-semibold text-white/50 hover:text-white/80 transition-colors duration-200">
+              바로가기
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+            </a>
+            <img src="/assets/image/webpin-logo.png" class="w-24 h-24 object-contain" alt="웹핀 로고">
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-between bg-white/5 border border-white/10 rounded-2xl p-8">
+          <div>
+            <p class="text-white text-lg font-bold mb-3">룩세렛 멤버십</p>
+            <p class="text-white/60 text-sm font-medium leading-relaxed">
+              다양하고 풍성한 혜택을<br>
+              한 번에 누릴 수 있도록<br>
+              고객 맞춤형 서비스와<br>
+              다양한 프로그램을 함께 마련합니다.
+            </p>
+          </div>
+          <div class="mt-8 flex items-end justify-between">
+            <a href="https://luxeret.com/membership" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-1.5 text-sm font-semibold text-white/50 hover:text-white/80 transition-colors duration-200">
+              바로가기
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+            </a>
+            <img src="/assets/image/membership-logo.png" class="w-24 h-24 object-contain" alt="멤버십 로고">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="bg-black py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight">룩세렛 최근 이야기</h2>
+      </div>
+
+      <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="animate-pulse bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+          <div class="w-full h-48 bg-white/10"></div>
+          <div class="p-6 space-y-3">
+            <div class="h-4 bg-white/10 rounded w-3/4"></div>
+            <div class="h-3 bg-white/10 rounded w-1/3"></div>
+          </div>
+        </div>
+        <div class="animate-pulse bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+          <div class="w-full h-48 bg-white/10"></div>
+          <div class="p-6 space-y-3">
+            <div class="h-4 bg-white/10 rounded w-3/4"></div>
+            <div class="h-3 bg-white/10 rounded w-1/3"></div>
+          </div>
+        </div>
+        <div class="animate-pulse bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+          <div class="w-full h-48 bg-white/10"></div>
+          <div class="p-6 space-y-3">
+            <div class="h-4 bg-white/10 rounded w-3/4"></div>
+            <div class="h-3 bg-white/10 rounded w-1/3"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="https://blog.luxeret.com" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 text-sm font-semibold text-white/50 hover:text-white/80 transition-colors duration-200">
+          더 많은 소식 보기
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0a0a0a] border-t border-white/10">
+    <div class="max-w-5xl mx-auto px-6 pt-14 pb-8">
+      <div class="flex flex-col md:flex-row justify-between gap-12 mb-12">
+
+        <div class="flex flex-col gap-4 min-w-[180px]">
+          <div class="flex items-center gap-1.5">
+            <img src="/assets/image/luxeret-logo.png" class="w-9 h-9 object-contain" alt="룩세렛 로고">
+            <span class="text-white font-bold tracking-widest text-base">LUXERET</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-10 md:gap-14">
+          <div class="flex flex-col gap-3">
+            <p class="text-white text-sm font-bold tracking-widest uppercase mb-1">서비스</p>
+            <a href="https://luxeret.com/notice" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">공지사항</a>
+            <a href="https://luxeret.com/support" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">고객센터</a>
+            <a href="https://docs.luxeret.com/luxeret/brand-policy" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">브랜드 리소스센터</a>
+          </div>
+
+          <div class="flex flex-col gap-3">
+            <p class="text-white text-sm font-bold tracking-widest uppercase mb-1">회사</p>
+            <a href="https://luxeret.com/about" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">회사소개</a>
+            <a href="https://returns.luxeret.com" target="_blank" rel="noopener noreferrer" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">리턴</a>
+            <a href="https://webpin.luxeret.com" target="_blank" rel="noopener noreferrer" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">웹핀</a>
+            <a href="https://shop.luxeret.com" target="_blank" rel="noopener noreferrer" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">룩세렛 스토어</a>
+          </div>
+
+          <div class="flex flex-col gap-3">
+            <p class="text-white text-sm font-bold tracking-widest uppercase mb-1">약관 및 법적고지</p>
+            <a href="https://docs.luxeret.com/luxeret/policy/privacy" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">개인정보 처리방침</a>
+            <a href="https://docs.luxeret.com/luxeret/policy/terms" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">서비스 이용약관</a>
+            <a href="https://docs.luxeret.com/luxeret/privacy-overseas" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">개인정보 국외이전 동의</a>
+            <a href="https://docs.luxeret.com/luxeret/policy/email" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">이메일 무단수집 거부</a>
+            <a href="https://docs.luxeret.com/luxeret/policy/agreement" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">청소년 보호정책</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-8 space-y-4">
+        <div class="flex flex-wrap gap-x-2 gap-y-1 text-white/50 text-sm font-medium">
+          <span>대표: 김태준</span>
+          <span class="text-white/20">|</span>
+          <span>사업자 등록번호: 802-68-00634</span>
+          <span class="text-white/20">|</span>
+          <span>통신판매업 신고번호: 2026-화성동탄-0247</span>
+          <span class="text-white/20">|</span>
+          <span>경기도 화성시 10용사로 344 102-B95호</span>
+        </div>
+        <p class="text-white/40 text-sm font-medium">
+          Copyright © 2025-2026 LUXERET. All Rights Reserved.<br>
+          본 사이트의 컨텐츠는 저작권법의 보호를 받는 바 무단 전재, 복사, 배포 등을 금합니다.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BLOG SCRIPT -->
+  <script>
+    const RSS_URL = 'https://blog.luxeret.com/rss';
+    const PROXY   = 'https://api.codetabs.com/v1/proxy/?quest=';
+
+    const GRADIENTS = [
+      'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)',
+      'linear-gradient(135deg, #111111 0%, #222222 100%)',
+      'linear-gradient(135deg, #0d0d0d 0%, #1d1d1d 100%)',
+    ];
+
+    // XSS 방지: 텍스트 이스케이프
+    function sanitize(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    // URL 검증: http/https 만 허용
+    function safeUrl(url) {
+      try {
+        const u = new URL(url);
+        return (u.protocol === 'https:' || u.protocol === 'http:') ? url : '#';
+      } catch {
+        return '#';
+      }
+    }
+
+    async function loadBlogPosts() {
+      try {
+        const res = await fetch(PROXY + encodeURIComponent(RSS_URL));
+        if (!res.ok) throw new Error('네트워크 오류');
+        const text = await res.text();
+
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(text, 'text/xml');
+
+        const parseError = xml.querySelector('parsererror');
+        if (parseError) throw new Error('RSS 파싱 오류');
+
+        const items = Array.from(xml.querySelectorAll('item')).slice(0, 3);
+        if (!items.length) throw new Error('게시물 없음');
+
+        const posts = items.map((item, i) => {
+          const title   = item.querySelector('title')?.textContent || '제목 없음';
+          const link    = item.querySelector('link')?.textContent || '#';
+          const pubDate = item.querySelector('pubDate')?.textContent || '';
+          const date    = pubDate ? new Date(pubDate).toLocaleDateString('ko-KR', {
+            year: 'numeric', month: 'long', day: 'numeric'
+          }) : '';
+          return {
+            title:    sanitize(title),
+            link:     safeUrl(link),
+            date:     sanitize(date),
+            gradient: GRADIENTS[i % GRADIENTS.length],
+          };
+        });
+
+        const grid = document.getElementById('blog-grid');
+        grid.innerHTML = '';
+
+        posts.forEach(({ title, link, date, gradient }) => {
+          const a = document.createElement('a');
+          a.href   = link;
+          a.target = '_blank';
+          a.rel    = 'noopener noreferrer';
+          a.className = 'flex flex-col bg-white/5 border border-white/10 rounded-2xl overflow-hidden';
+
+          const thumb = document.createElement('div');
+          thumb.style.background = gradient;
+          thumb.className = 'w-full h-48 flex items-center justify-center p-6';
+
+          const thumbText = document.createElement('p');
+          thumbText.style.cssText = 'font-family: Pretendard, sans-serif; font-weight: 800;';
+          thumbText.className = 'text-white text-base text-center leading-relaxed line-clamp-3';
+          thumbText.textContent = title;
+
+          const info = document.createElement('div');
+          info.className = 'flex flex-col justify-between flex-1 p-6 gap-3';
+
+          const titleEl = document.createElement('p');
+          titleEl.className = 'text-white text-sm font-bold leading-snug line-clamp-2';
+          titleEl.textContent = title;
+
+          const dateEl = document.createElement('p');
+          dateEl.className = 'text-white/40 text-xs font-medium';
+          dateEl.textContent = date;
+
+          thumb.appendChild(thumbText);
+          info.appendChild(titleEl);
+          info.appendChild(dateEl);
+          a.appendChild(thumb);
+          a.appendChild(info);
+          grid.appendChild(a);
+        });
+
+      } catch (e) {
+        console.error(e);
+        const grid = document.getElementById('blog-grid');
+        grid.innerHTML = '';
+        const msg = document.createElement('div');
+        msg.className = 'col-span-3 text-center text-white/30 text-sm font-medium py-12';
+        msg.textContent = '게시물을 불러오지 못했습니다.';
+        grid.appendChild(msg);
+      }
+    }
+
+    loadBlogPosts();
+  </script>
+
+  <!-- MAIN SCRIPT -->
+  <script>
+    const menuBtn    = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const header     = document.getElementById('header');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.firstElementChild.classList.add('bg-white/20');
+      } else {
+        header.firstElementChild.classList.remove('bg-white/20');
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const video = document.querySelector('video');
+      if (video) video.play().catch(() => {});
+    });
+  </script>
+
+</body>
+</html>
